@@ -424,7 +424,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
   if (true) {
-if (message.content === '+invite') {
+if (message.content === 'zinvite') {
       message.author.send('  https://discordapp.com/api/oauth2/authorize?client_id=518910272119767060&permissions=8&scope=bot  |  تفضل ربط البوت     ').catch(e => console.log(e.stack));
  
     }
