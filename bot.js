@@ -20,7 +20,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "1";
+const prefix = "+";
 /////////////////////////
 ////////////////////////
 
@@ -356,3 +356,91 @@ client.user.setStatus("dnd")
 });
 
 client.login(process.env.BOT_TOKEN);
+client.on('message', message => {
+if (message.content.startsWith(prefix + 'help')) { //DiamondCodes - [ X_KillerYT ]
+    let pages = [`
+ 
+        ***__ZIKO COMMAND__***
+**
+『$play /لتشغيل الاغاني  』
+『$stop /  لتوقيف الاغنيه 』
+『$skip / لتخطي الاغنيه 』
+『$np / الاغنيه اللي شغاله』
+『$queue / قائمه الأغاني 』
+『$pause / لتوقيف الاغنيه مؤقتا』
+『$resume / لتشغيل الاغنيه』
+『$invite / اضافه البوت سيرفرك』
+ 
+ 
+**
+ 
+   
+`]
+    let page = 1;
+ 
+    let embed = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setFooter(`Page ${page} of ${pages.length}`)
+    .setDescription(pages[page-1])
+ 
+    message.author.sendEmbed(embed).then(msg => {
+ 
+        msg.react('◀').then( r => {
+            msg.react('▶')
+ 
+ 
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
+ 
+ 
+        const backwards = msg.createReactionCollector(backwardsFilter, { time: 2000000});
+        const forwards = msg.createReactionCollector(forwardsFilter, { time: 2000000});
+ 
+ 
+ 
+        backwards.on('collect', r => {
+            if (page === 1) return;
+            page--;
+            embed.setDescription(pages[page-1]);
+            embed.setFooter(`Page ${page} of ${pages.length}`);
+            msg.edit(embed)
+        })
+        forwards.on('collect', r => {
+            if (page === pages.length) return;
+     
+      page++;
+            embed.setDescription(pages[page-1]);
+            embed.setFooter(`Page ${page} of ${pages.length}`);
+            msg.edit(embed)
+        })
+        })
+    })
+    }
+});
+client.on('message', message => {
+    if(message.content === '$help') {
+        message.reply('تم ارساله بالخاص :white_check_mark: ');
+    }
+});
+client.on('message', message => {
+  if (true) {
+if (message.content === '$invite') {
+      message.author.send('  https://discordapp.com/api/oauth2/authorize?client_id=518910272119767060&permissions=8&scope=bot  |  تفضل ربط البوت     ').catch(e => console.log(e.stack));
+ 
+    }
+   }
+  });
+ 
+ 
+client.on('message', message => {
+     if (message.content === "$invite") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
+     
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
