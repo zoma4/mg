@@ -419,12 +419,12 @@ if (message.content.startsWith(prefix + 'help')) { //DiamondCodes - [ X_KillerYT
 });
 client.on('message', message => {
     if(message.content === '$help') {
-        message.reply('تم ارساله بالخاص :white_check_mark: ');
+        message.reply('بص خاصك يا نرم :white_check_mark: ');
     }
 });
 client.on('message', message => {
   if (true) {
-if (message.content === '$invite') {
+if (message.content === '+invite') {
       message.author.send('  https://discordapp.com/api/oauth2/authorize?client_id=518910272119767060&permissions=8&scope=bot  |  تفضل ربط البوت     ').catch(e => console.log(e.stack));
  
     }
