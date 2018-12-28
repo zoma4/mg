@@ -370,6 +370,7 @@ if (message.content.startsWith(prefix + 'help')) { //DiamondCodes - [ X_KillerYT
 『+pause / لتوقيف الاغنيه مؤقتا』
 『+resume / لتشغيل الاغنيه』
 『+invite / اضافه البوت سيرفرك』
+『+repeat / لاعاده الاغنيه 』
  
  
 **
