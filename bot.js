@@ -351,7 +351,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers`);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`1play | Last Music`,"http://twitch.tv/Death Shop")
+client.user.setGame(`Ahmed Hazem`,"http://twitch.tv/Death Shop")
 client.user.setStatus("dnd")
 });
 
@@ -362,14 +362,14 @@ if (message.content.startsWith(prefix + 'help')) { //DiamondCodes - [ X_KillerYT
  
         ***__ZIKO COMMAND__***
 **
-『$play /لتشغيل الاغاني  』
-『$stop /  لتوقيف الاغنيه 』
-『$skip / لتخطي الاغنيه 』
-『$np / الاغنيه اللي شغاله』
-『$queue / قائمه الأغاني 』
-『$pause / لتوقيف الاغنيه مؤقتا』
-『$resume / لتشغيل الاغنيه』
-『$invite / اضافه البوت سيرفرك』
+『+play /لتشغيل الاغاني  』
+『+stop /  لتوقيف الاغنيه 』
+『+skip / لتخطي الاغنيه 』
+『+np / الاغنيه اللي شغاله』
+『+queue / قائمه الأغاني 』
+『+pause / لتوقيف الاغنيه مؤقتا』
+『+resume / لتشغيل الاغنيه』
+『+invite / اضافه البوت سيرفرك』
  
  
 **
